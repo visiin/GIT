@@ -1,2 +1,9 @@
 # Default ignored files
 /workspace.xml
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
