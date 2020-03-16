@@ -1,0 +1,33 @@
+安装代码：
+
+npm install -g 名称
+
+brew install 名称
+
+-g 全局-S 格式 -save 附加于打包文件上-D 格式 –save-dev 同上，不过这个是开发者模式本地安装 (将安装包放在 ./node_modules 下)
+
+安装bootstrap3：
+
+npm install bootstrap
+npm install -g grunt-cli
+cd node_modules/bootstrap
+npm install
+
+上午结束：完成构建最基本的前端框架环境。
+
+下午开始：将默认的less编译改为sass编译。
+
+发现一个BUG，安装后文件缺失docs，可能因为不维护了吧，所以用最新的4来试一试。
+
+忽然想先用hugo做一个技术博客了，感觉这思路有些飘。
+
+申请github新项目 用户名username.github.io安装Hugo brew install hugo安装支持hugo new site（文件夹名称）安装模版文件在themes里git submodule add git@github.com:MeiK2333/github-style.git themes/github-style 我随便选了个主题注意：没有设置git密钥的话需要用https，不能用git格式下载。简单配置config，把模版加上去：theme = "github-style”新建并发布第一篇文章：hugo new post/my-first-post.md 编辑md文件并且保存开始运行站点
+
+# MD格式
+## 注意点1
+### 注意点2
+
+电影《向日葵》动画《恶魔城》第一季01-04（应该还不错）
+
+
+
