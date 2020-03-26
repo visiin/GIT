@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict'; //静态强制声明模式
+    console.log(`
+    版权声明：
+    本网站作者Visdark
+    禁止任何形式的抄袭和仿制
+    如有雷同
+    我确实也没有办法
+    `);
+    function sum(arr){
+        return arr.reduce(function(x,y){
+            return x + y;
+        });
+    }
+    console.log(`
+    第一个案例输出应该是21，返回了一个值。
+    `);
+    console.log(sum([1,2,3,4,5,6]));
+    function busy_sum(arr){
+        return function () {
+            return arr.reduce(function(x,y){
+                return x + y;
+            });
+        };
+    }
+    console.log(`
+    第二个案例输出应该是一个函数。
+    `);
+    console.log(busy_sum([1,2,3,4,5,6]));//f()
+    console.log(busy_sum([1,2,3,4,5,6])());//21
+    let v1 = busy_sum([1,2,3]);
+    let v2 = busy_sum([1,2,3]);
+    let v3 = "你好";
+    let v4 = "你好";
+    let v5 = sum([1,2]);
+    let v6 = sum([1,2]);
+    console.log(busy_sum([1,2,3,4,5,6])() === busy_sum([1,2,3,4,5,6])());//true
+    console.log(v1 === v2);//false
+    console.log(v3 === v4);//true
+    console.log(v5 === v6);//true
+    console.log(v1 === busy_sum([1,2,3]))//false
+</script>
+注明：代码和学习都在在控制台
+</body>
+</html>

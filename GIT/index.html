@@ -7,10 +7,27 @@
 <body>
 <script>
     'use strict'; //静态强制声明模式
-    alert('我不想执行');
-    alert((1 + 2) * 5 / 2);
-    var x = "版权声明：本网站作者Visdark，禁止任何形式的抄袭和仿制，如有雷同，我确实也没有办法。";
+    //alert('我不想执行');
+    //alert((1 + 2) * 5 / 2);
+    const name = '小明';
+    const age = 20;
+    const message = `你好, ${name}, 你今年${age}岁了!`;
+    //alert(message);
+    const x = "版权声明：本网站作者Visdark，禁止任何形式的抄袭和仿制，如有雷同，我确实也没有办法。";
     console.log(x);
+    console.log(`
+    版权声明：
+    本网站作者Visdark
+    禁止任何形式的抄袭和仿制
+    如有雷同
+    我确实也没有办法
+    `);
+    function sum(arr){
+        return arr.reduce(function(x,y){
+            return x + y;
+        });
+    }
+    console.log(sum([1,2,3,4,5,6]));
 </script>
 </body>
 </html>
