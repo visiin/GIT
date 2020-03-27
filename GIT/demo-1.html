@@ -45,7 +45,73 @@
     console.log(v1 === v2);//false
     console.log(v3 === v4);//true
     console.log(v5 === v6);//true
-    console.log(v1 === busy_sum([1,2,3]))//false
+    console.log(v1 === busy_sum([1,2,3]));//false
+    console.log(`
+    现在学习的是闭包的内容：
+    `);
+    function count() {
+        let v_arr = [];
+        for(let i=1; i<=3; i++){
+            v_arr.push(
+                function () {
+                    return i * i;
+                }
+            );
+        }
+        return v_arr;
+    }
+    console.log(count());//3f()的列表
+    let v7 = count();
+    let v8 = v7[0];//f() = 1
+    let v9 = v7[2];//f() = 9
+    console.log(v9(), v8());
+
+    function v_add(num) {
+        let v_num = num || 0;
+        return {
+            inc : function () {
+                return v_num += 1;
+            }
+        }
+    }
+    let v10 = v_add(1000000000000000);
+    console.log(v10.inc(), v10.inc(), v10.inc());
+    function make_pow(y) {
+        return function (x) {
+            return Math.pow(x,y);
+        }
+    }
+    console.log(make_pow(2)(5));
+    console.log(make_pow(3)(7));
+    console.log("脑洞大开——邱奇的数学定义");
+    let zero = function (f) {
+        return function () {
+            return 0;
+        }
+    };
+    let one = function (f) {
+        return function () {
+            return f();
+        }
+    };//返回一个函数本身
+    function add(m,n){
+        return function (f) {
+            return function () {
+                return m(f)(n(f)());
+            }
+        }
+    }
+    let two = add(one, one);
+    let three = add(one, two);
+    let four = add(two, two);
+    let five = add(two,three);
+
+    four(function () {
+        console.log('print 4 times');
+    })();
+    zero(function () {
+        console.log('print 0 times');
+    })();
 </script>
 注明：代码和学习都在在控制台
 </body>
